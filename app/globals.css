@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Editorial typography — distinctive, restrained, sophisticated */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #FAFAF6;
+  color: #1A1715;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "ss02", "cv11";
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+/* Display headings use the serif */
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-feature-settings: "ss01", "ss02";
+}
+
+/* Subtle texture on hero elements */
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(26, 23, 21, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Hairline border helper */
+.hairline {
+  border-color: rgba(26, 23, 21, 0.08);
+}
+
+/* Number style — tabular for data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Editorial small caps for labels */
+.smallcaps {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* Status badge styles */
+.badge-existing {
+  background: rgba(42, 66, 52, 0.08);
+  color: #2A4234;
+  border: 1px solid rgba(42, 66, 52, 0.15);
+}
+
+.badge-proposed {
+  background: rgba(160, 83, 60, 0.08);
+  color: #A0533C;
+  border: 1px solid rgba(160, 83, 60, 0.2);
+}
+
+.badge-elevated {
+  background: rgba(154, 123, 63, 0.08);
+  color: #9A7B3F;
+  border: 1px solid rgba(154, 123, 63, 0.2);
+}
+
+/* Smooth transitions everywhere */
+button,
+a {
+  transition: all 0.15s ease;
+}
+
+/* Refined scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 23, 21, 0.12);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 23, 21, 0.2);
+}
+
+/* Selection */
+::selection {
+  background: rgba(42, 66, 52, 0.15);
+  color: #1A1715;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #2A4234;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Animation utilities */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Dotted divider — editorial touch */
+.dotted-divider {
+  border-top: 1px dotted rgba(26, 23, 21, 0.2);
+}
+
+/* Pull quote / lead paragraph */
+.lead {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: #3D3833;
+  letter-spacing: -0.01em;
+}
